@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  django:
+    build: ./agronet-backend
+    container_name: react-backend
+    restart: always
+    env_file: .env
+    depends_on:
+      - db
+
+  node:
+    build: ./agronet-frontend
+    container_name: django-frontend
+    restart: always
+    env_file: .env
+    depends_on:
+      - django
+
+  db:
+    image: postgres:18.1
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: bdf5fd
+      POSTGRES_DB: agronet_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - django
+      - node
+
+volumes:
+  pgdata:

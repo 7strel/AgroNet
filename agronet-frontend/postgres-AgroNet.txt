@@ -1,0 +1,15 @@
+modYSZyTWx135rrKSRkjpRhnsYkPMIEk
+
+postgresql://derek:modYSZyTWx135rrKSRkjpRhnsYkPMIEk@dpg-cvkgl48gjchc73cc2150-a/agronet_db
+
+
+postgresql://derek:modYSZyTWx135rrKSRkjpRhnsYkPMIEk@dpg-cvkgl48gjchc73cc2150-a.oregon-postgres.render.com/agronet_db
+
+
+PGPASSWORD=modYSZyTWx135rrKSRkjpRhnsYkPMIEk psql -h dpg-cvkgl48gjchc73cc2150-a.oregon-postgres.render.com -U derek agronet_db
+
+5432
+
+agronet_db
+
+derek

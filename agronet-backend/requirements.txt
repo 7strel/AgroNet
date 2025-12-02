@@ -1,0 +1,12 @@
+Django==5.1
+djangorestframework==3.15.2
+mysqlclient==2.2.7
+PyJWT==2.10.1
+django-cors-headers==4.7.0
+psycopg==3.2.6
+pillow==11.1.0
+channels-postgres==1.0.6
+django-filter==25.1
+dj-database-url==2.3.0
+drf-spectacular==0.28.0
+gunicorn==23.0.0
